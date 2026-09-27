@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공무원 인사교류 활성화 및 채용제도 개선 입법예고</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --secondary-color: #0d9488;
+            --accent-color: #4f46e5;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 25px rgba(37, 99, 235, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+        }
+
+        header.hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+            color: #ffffff;
+            padding: 3.5rem 1.5rem 3rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header.hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #ffffff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        header.hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            max-width: 900px;
+            margin: 0 auto 1rem;
+            line-height: 1.35;
+            word-break: keep-all;
+        }
+
+        header.hero .meta-info {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: -2rem auto 4rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .overview-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .overview-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            word-break: keep-all;
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .section-header .icon-tag {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .section-card h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .content-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            word-break: keep-all;
+        }
+
+        .content-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            width: 1.4rem;
+            height: 1.4rem;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
+        .content-list strong {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        blockquote.minister-quote {
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            border-left: 6px solid var(--primary-color);
+            border-radius: 0 16px 16px 0;
+            padding: 2rem 2.2rem;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        blockquote.minister-quote::before {
+            content: "“";
+            font-size: 4rem;
+            color: rgba(37, 99, 235, 0.2);
+            position: absolute;
+            top: -0.5rem;
+            left: 1rem;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        blockquote.minister-quote p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #1e293b;
+            line-height: 1.75;
+            position: relative;
+            z-index: 2;
+            word-break: keep-all;
+            margin-bottom: 1rem;
+        }
+
+        blockquote.minister-quote footer {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-align: right;
+        }
+
+        footer.page-footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            header.hero h1 {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .section-card {
+                padding: 1.5rem 1.2rem;
+            }
+            blockquote.minister-quote {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <span class="hero-badge">행정안전부 보도자료</span>
+        <h1>공무원 인사교류 활성화 및 채용제도 개선 입법예고</h1>
+        <div class="meta-info">발표일: 2026년 5월 11일 | 담당부서: 지방인사제도과</div>
+    </header>
+
+    <main class="container">
+        <div class="overview-card">
+            <p>
+                행정안전부는 중앙부처·지방정부·민간기업 간 벽을 허무는 '프로젝트 기반 인사교류' 활성화를 위해 교류 참여자에게 파격적인 인사 혜택을 제공하고, 수험생 부담 완화 및 우수 인재 채용을 확대하는 내용의 「지방공무원 임용령」 및 「지방공무원 평정규칙」 개정안을 입법예고합니다.
+            </p>
+        </div>
+
+        <!-- 섹션 1: 인사 인센티브 -->
+        <section class="section-card" id="incentives">
+            <div class="section-header">
+                <div class="icon-tag">01</div>
+                <h2>인사 인센티브</h2>
+            </div>
+            <ul class="content-list">
+                <li>
+                    <strong>승진 소요 연수 단축:</strong> 핵심 인사교류 직위 또는 민간기업 전담공무원으로 근무할 경우, 해당 직위 교류 기간의 절반을 최대 1년 범위 내에서 승진 소요 연수에서 감면합니다.
+                </li>
+                <li>
+                    <strong>특별승진 기회 부여:</strong> 해당 직위에서 1년 이상 근무하며 우수한 성과를 낸 공무원에게는 특별승진의 기회를 부여합니다.
+                </li>
+                <li>
+                    <strong>대우공무원 혜택 확대:</strong> 기존 인사교류자에게만 적용되던 '대우공무원 산정 시 교류 기간 경력 100% 단축' 혜택을 민간기업 전담공무원에게도 동일하게 확대 적용합니다.
+                </li>
+                <li>
+                    <strong>평가·성과급 의무 보장:</strong> 인사교류자는 일반 공무원과 평정 단위를 분리하여 근무성적평정에서 최소 '우' 등급, 성과급에서 최소 'A' 등급을 의무 보장하고 최상위 우수 성과자에게는 특별성과가산금 지급 근거를 마련합니다.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 섹션 2: 채용제도 개선 -->
+        <section class="section-card" id="recruitment-improvement">
+            <div class="section-header">
+                <div class="icon-tag">02</div>
+                <h2>채용제도 개선</h2>
+            </div>
+            <ul class="content-list">
+                <li>
+                    <strong>8급 한국사 과목 대체:</strong> 수험생 부담 완화 및 채용시험 간 호환성을 높이기 위해 2027년부터 8급 공채 한국사 과목을 9급과 동일하게 '한국사능력검정시험(3급 이상)'으로 대체합니다.
+                </li>
+                <li>
+                    <strong>경력 단축 및 직급 확대:</strong> 최신 경력 반영이 중요한 특정 분야 경채시험의 필요 경력을 1년 범위 내에서 단축하고, 우수 인재 추천채용제 대상 직급을 현행 8급 이하에서 7급까지 확대합니다.
+                </li>
+                <li>
+                    <strong>취약 청년 공직 진출 지원:</strong> 9급 공채 저소득층 구분모집 대상에 '자립준비청년'과 '보호기간 연장청년'을 신규 추가하고, 자격 유지 기간 요구조건을 2년 이상에서 1년으로 완화합니다.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 장관 인용구 -->
+        <blockquote class="minister-quote">
+            <p>
+                "이번 조치는 프로젝트 기반 인사교류를 통해 대규모 국책사업 등에 참여하는 공무원에게 파격적인 인센티브를 부여해 보다 성공적인 사업 추진을 돕기 위한 것입니다. 앞으로도 공직사회의 개방성을 확대하고 활력을 제고할 수 있도록 지방인사제도를 적극적으로 개선해 나가겠습니다."
+            </p>
+            <footer>— 윤호중 행정안전부 장관</footer>
+        </blockquote>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2026 대한민국 행정안전부. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
